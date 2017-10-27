@@ -27,6 +27,10 @@ class User
      */
         private $password;
     /*
+* @var        string $password mot de passe crypte de l'utrilisateur
+*/
+    private $role;
+    /*
     * @var         tableau $errors recoltant les differentes erreurs
     */
         private $errors= [];
@@ -49,6 +53,7 @@ class User
             $this->username=$data['username'];
             $this->email = $data['email'];
             $this->password = $data['password'];
+            $this->role = $data['role'];
         }
      /**
      * @return mixed
@@ -147,6 +152,10 @@ class User
                  $this->password = $password;
                  return $this;
              }
+        }
+        public function getRole()
+        {
+            return $this->role;
         }
 }
  

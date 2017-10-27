@@ -1,5 +1,4 @@
 <?php
-session_start();
 	if(!empty($_GET['id']) AND (ctype_digit($_GET['id'])))
 	{
 		$idArticle = $_GET['id'];

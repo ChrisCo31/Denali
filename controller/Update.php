@@ -1,5 +1,4 @@
 <?php
-session_start();
 // instanciation = creation d'un objet : $article
 	if(!empty($_POST['titre']) OR (!empty($_POST['text'])))
 	{

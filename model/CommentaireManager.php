@@ -46,6 +46,7 @@ class CommentaireManager extends BddManager
                         $commentaire->hydrate($row);
                         $commentaires[] = $commentaire;
                     }
+                    if(!isset($commentaires)) return null;
                     return $commentaires;
             }
 

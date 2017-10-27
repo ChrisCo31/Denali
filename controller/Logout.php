@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 session_destroy();
 $_SESSION['flash']['success'] = 'vous etes maintenant deconnecte';
 

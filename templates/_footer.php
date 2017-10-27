@@ -1,5 +1,5 @@
         <footer>
-            <p>Le nouveau livre de Jean Forteroche</p>
+            <p>© 2017 Jean FORTEROCHE - Billet simple pour l'Alaska  by ChrisCo</p>
         </footer>
     </body>
 </html>
