@@ -1,5 +1,4 @@
 <?php
-// verification que des donnees ont ete postes
 if(!empty($_POST))
 {
         $user = new User();
@@ -10,14 +9,15 @@ if(!empty($_POST))
         {
                 $userManager = new UserManager();
                 $verify = $userManager->check($user);
+
                 if($verify !== false)
                 {
                     echo "change de pseudo";
                 }else
                 {
                     $userManager->create($user);
-                }
 
+                }
         }else
         {
             $user->setErrors($errors);

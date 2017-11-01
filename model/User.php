@@ -29,6 +29,8 @@ class User
     /*
 * @var        string $password mot de passe crypte de l'utrilisateur
 */
+    private $token;
+    private $datetoken;
     private $role;
     /*
     * @var         tableau $errors recoltant les differentes erreurs
@@ -54,7 +56,42 @@ class User
             $this->email = $data['email'];
             $this->password = $data['password'];
             $this->role = $data['role'];
+            $this->token = $data['token'];
+            $this->datetoken = $data['dateToken'];
         }
+
+    /**
+     * @return mixed
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param mixed $token_reset
+     */
+    public function setToken($token)
+    {
+        $this->token = $token;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateToken()
+    {
+        return $this->datetoken;
+    }
+
+    /**
+     * @param mixed $date_reset
+     */
+    public function setDateToken($datetoken)
+    {
+        $this->datetoken = $datetoken;
+    }
+
      /**
      * @return mixed
      */

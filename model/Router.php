@@ -18,7 +18,8 @@ class Router
          "Report" =>'controller/Report.php',
          "DelComment" =>'controller/DelComment.php',
          "ValidateComment" =>'controller/ValidateComment.php',
-         "Forget" => 'controller/Forget.php'
+         "Forget" => 'controller/Forget.php',
+         "Reset" => 'controller/Reset.php'
     ];
 //constructor qui prend en parametres l'url
     public function __construct($url)
