@@ -12,7 +12,7 @@ class Session extends BddManager
     private $password;
     private $role;
 
-    public function initSession($username, $email, $password, $role)
+    public function initAuth($username, $email, $password, $role)
     {
         $_SESSION['auth'] = array(
             'username'=> $username,

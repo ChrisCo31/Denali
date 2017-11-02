@@ -25,6 +25,7 @@ class ArticleManager extends BddManager
                     );
                     return $this;
              }
+
      /**
       * Recupere tous les objets Article de la bdd
       *

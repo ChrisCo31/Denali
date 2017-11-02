@@ -10,15 +10,15 @@ if(!empty($_POST) AND !empty($_POST['username']) AND (!empty($_POST['password'])
         $password = $result['password'];
         $role = $result['role'];
         $session = new Session();
-        $session->initSession($username, $email, $password, $role);
+        $session->initAuth($username, $email, $password, $role);
         header("Location: Dashboard");
     }else
     {
-        $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrecte';
+        echo 'Identifiant ou mot de passe incorrecte';
     }
 }else
 {
-    $_SESSION['flash']['danger'] = "rien dans les _POST s'affiche des l'arrive sur la page";
+    echo  "Veuillez remplir tout les champs";
 }
 // Inclusion du template
 include 'templates/login.php';

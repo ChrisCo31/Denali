@@ -12,15 +12,16 @@ if(!empty($_POST))
 
                 if($verify !== false)
                 {
-                    echo "change de pseudo";
+                    $_SESSION['flash']['error'] = 'Ces donnees existent deja"';
                 }else
                 {
                     $userManager->create($user);
-
+                    header('Location: Login');
+                    exit();
                 }
         }else
         {
-            $user->setErrors($errors);
+            $user->getErrors($errors);
         }
 }
 require_once 'templates/register.php';

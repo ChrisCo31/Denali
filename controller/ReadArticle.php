@@ -8,7 +8,7 @@
         $article = $articleManager->readOne($idArticle);
 		$commentaireManager = new CommentaireManager();
         $commentaires = $commentaireManager->readAllCommentsByPost($idArticle);
-		include 'templates/readArticle.php';
+        include 'templates/readArticle.php';
 		exit;
 	} else
 	{

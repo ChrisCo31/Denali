@@ -4,12 +4,11 @@
     {
         $CommentaireManager = new CommentaireManager();
         $commentaire = new Commentaire();
-        $date_commentaire = new DateTime();
-        var_dump($date_commentaire);
+        $date_commentaire = date('Y-m-d H:i:s');
         $commentaire->setIdArticle($_POST['id']);
         $commentaire->setUsername($_POST['username']);
         $commentaire->setCommentaire($_POST['commentaire']);
-        $commentaire->setDateCommentaire($date_commentaire->date);
+        $commentaire->setDateCommentaire($date_commentaire);
         $saveIsOk = $CommentaireManager->create($commentaire);
         header('location: Home');
         exit;

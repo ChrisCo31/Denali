@@ -1,7 +1,5 @@
 <?php ob_start(); ?>
-
 <h1>S'inscrire</h1>
-
     <form action="" method="POST">
             <div class="form-group">
 

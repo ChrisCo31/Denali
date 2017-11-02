@@ -24,8 +24,9 @@ class Commentaire
             $this->id_article=$data['id_article'];
             $this->username=$data['username'];
             $this->commentaire = $data['commentaire'];
-            $this->date_acommentaire = new DateTime($data['date_commentaire']);
+            $this->date_commentaire = $data['date_commentaire'];
             $this->state = $data['state'];
+
         }
         public function getIdCommentaire()
         {

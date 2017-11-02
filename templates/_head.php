@@ -15,10 +15,13 @@
         <script>
             tinymce.init({
                 selector: '#mytextarea'
+                forced_root_block : false,
+                force_br_newlines : true,
+                force_p_newlines : false
+
             });
         </script>
     </head>
     <body>
       <div class="container">
 </html>
-

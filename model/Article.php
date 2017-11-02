@@ -18,7 +18,7 @@ class Article
         $this->id_article=$data['id_article'];
         $this->titre = $data['titre'];
         $this->text = $data['text'];
-        $this->date_ajout = new DateTime($data['date_ajout']);
+        $this->date_ajout = $data['date_ajout'];
     }
     function getId_article()
         {
