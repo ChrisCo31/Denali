@@ -1,6 +1,7 @@
 <?php
-session_destroy();
-$_SESSION['flash']['success'] = 'vous etes maintenant deconnecte';
+$session = new Session();
+$session->destroy();
+$session->setFlash('success', "Vous etes maintenant deconnecté");
 
 // Inclusion du template
 include 'templates/logout.php';

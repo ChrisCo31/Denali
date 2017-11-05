@@ -1,6 +1,6 @@
 <?php
 // Création d'un objet
-    if(!empty($_POST['username']) OR (!empty($_POST['Commentaire'])))
+    if(!empty($_POST['username']) && (!empty($_POST['Commentaire'])))
     {
         $CommentaireManager = new CommentaireManager();
         $commentaire = new Commentaire();
@@ -10,11 +10,14 @@
         $commentaire->setCommentaire($_POST['commentaire']);
         $commentaire->setDateCommentaire($date_commentaire);
         $saveIsOk = $CommentaireManager->create($commentaire);
+        $session = new Session();
+        $session ->setFlash('success', "Merci de votre commentaire");
         header('location: Home');
         exit;
     }else
     {
-        $_SESSION['flash']['warning'] = 'veuillez remplir tous les champs, svp';
+        $session = new Session();
+        $session ->setFlash('danger', "Vous devez remplir tout les champs");
         include 'templates/insertComments.php';
         exit;
     }

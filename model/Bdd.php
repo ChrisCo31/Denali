@@ -5,7 +5,6 @@
  */
 class Bdd
 {
-	//Declaration des proprietes
     private $bdd;
     private $host      = "localhost";
     private $login     = "root";

@@ -1,6 +1,17 @@
 <?php ob_start(); ?>
 <h1>S'inscrire</h1>
-    <form action="" method="POST">
+<?php if(!empty($errors)):?>
+<div class="alert alert-danger">
+    <p> Vous n'avez pas rempli le formulaire correctement</p>
+    <?php foreach ($errors as $error): ?>
+        <ul>
+            <li><?= $error; ?></li>
+        </ul>
+    <?php endforeach;?>
+
+</div>
+<?php endif; ?>
+        <form action="" method="POST">
             <div class="form-group">
 
                 <label for="">Pseudo</label>
@@ -21,4 +32,4 @@
                 <button type="submit" name = "test" class="btn btn-primary">M'inscrire</button>
     </form>
 <?php $contenu = ob_get_clean(); ?>
-<?php require '_gabarit.php'; ?>
+<?php require '_gabarit.php';

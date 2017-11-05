@@ -5,7 +5,9 @@ if(!empty($_GET['id']) AND (ctype_digit($_GET['id'])))
     $id_article = $_GET['id'];
     $articleManager = new ArticleManager();
     $result = $articleManager->delete($id_article);
-    header('location: Home');
+    $session = new Session();
+    $session ->setFlash('success', "L'article a bien été supprimé");
+    header('location: Dashboard');
 } else
 {
     header('location: Error');

@@ -27,6 +27,7 @@
                         <a  class ="btn btn-warning btn-sm" href ="ValidateComment?id=<?php echo $comment->getIdCommentaire()?>">Valider</a>
                     <?php endif; ?>
                         <a  class ="btn btn-warning btn-sm" href ="DelComment?id=<?php echo $comment->getIdCommentaire()?>">Supprimer</a>
+                        <a  class ="btn btn-warning btn-sm" href ="ReadArticle?id=<?php echo $comment->getIdArticle()?>">Voir l'article</a>
                     </article>
                 <?php endforeach ?>
             </ul>

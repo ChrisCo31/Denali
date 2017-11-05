@@ -5,13 +5,12 @@
  * Date: 26/10/2017
  * Time: 11:08
  */
-class Session extends BddManager
+class Session
 {
-    private $username;
-    private $email;
-    private $password;
-    private $role;
-
+    public function destroy()
+    {
+        session_destroy();
+    }
     public function initAuth($username, $email, $password, $role)
     {
         $_SESSION['auth'] = array(
@@ -30,71 +29,45 @@ class Session extends BddManager
             return false;
         }
     }
-
-    /**
-     * @return mixed
-     */
+    public function setUsername($username)
+{
+    $_SESSION['username'] = $username;
+}
     public function getUsername()
     {
         return $this->username;
     }
-
-    /**
-     * @param mixed $username
-     */
-    public function setUsername($username)
+    public function setEmail($email)
     {
-        $this->username = $username;
+        $_SESSION['email'] = $email;
     }
-
-    /**
-     * @return mixed
-     */
     public function getEmail()
     {
         return $this->email;
     }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email)
+    public function setPassword($password)
     {
-        $this->email = $email;
+        $_SESSION['password'] = $password;
     }
-
-    /**
-     * @return mixed
-     */
     public function getPassword()
     {
         return $this->password;
     }
-
-    /**
-     * @param mixed $password
-     */
-    public function setPassword($password)
+    public function setRole($role)
     {
-        $this->password = $password;
+        $_SESSION['role'] = $role;
     }
-
-    /**
-     * @return mixed
-     */
     public function getRole()
     {
         return $this->role;
     }
-
-    /**
-     * @param mixed $role
+    /*
+     * Methode qui permet de definir un message flash
+     * En premier parametre la cle et en second parametre le message
      */
-    public function setRole($role)
+    public function setFlash($key, $message)
     {
-        $this->role = $role;
+        $_SESSION['flash'][$key] = $message;
     }
-
-
 
 }

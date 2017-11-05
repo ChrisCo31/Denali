@@ -4,21 +4,13 @@
 	    <h2><?php echo $article->getTitre(); ?></h2>
 	    <p><?php echo $article->getText(); ?></p>
     </article>
+    <a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>">Retour à la page précédente</a>
     	<hr>
 </header>
 <section id = "Commentaires">
 	<div class="well well-lg">
 		<h3> Commentaires</h3>
-				<?php if(isset($commentaires) AND (!empty($commentaires)))
-                {
-                    foreach  ($commentaires as $commentaire):?>
-                        <article>
-                            <p><strong>Le <?php echo date('d/m/Y à H:i:s', strtotime($commentaire->getDateCommentaire())); ?> </strong></p>
-                            <p> <strong><?php echo $commentaire->getUsername() ?> :</strong> "<?php echo $commentaire->getCommentaire() ?>"</p>
-                            <a  class ="btn btn-warning btn-sm" href ="Report?id=<?php echo $commentaire->getIdCommentaire()?>">Signaler</a>
-                        </article>
-                    <?php endforeach;
-                }?>
+				<?php include_once'_comments.php'; ?>
 	</div>
 		    <hr>
 	<div class="well well-lg">

@@ -7,7 +7,6 @@
  */
 class Autoloader
 {
-    // Enregistrement de la fonction en autoload afin qu'elle soit appele des que l'on instanciera une classe
     static function register()
     {
         spl_autoload_register(array(__CLASS__, 'autoload'));

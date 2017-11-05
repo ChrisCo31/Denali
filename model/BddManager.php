@@ -5,7 +5,6 @@
  */
 class BddManager
 {
-	//Declaration des proprietes
     protected $bdd;
     private $host      = "localhost";
     private $login     = "root";

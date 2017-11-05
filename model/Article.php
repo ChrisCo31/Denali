@@ -54,5 +54,4 @@ class Article
         {
             $this->date_ajout = $date_ajout;
         }
-
 }

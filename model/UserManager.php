@@ -2,13 +2,6 @@
 
 class UserManager extends BddManager
 {
-/**
- * Insert un objet User dans la BDD
- *
- * @param      User  $userarticle  
- *
- * @return    
- */
     public function updatePass(User $user)
     {
         $bdd = $this->bdd;
@@ -16,11 +9,10 @@ class UserManager extends BddManager
         $query->execute(array(
             $user->getPassword('password'),
             $user->getId('id')
-                ));
+             ));
         $result=$query;
         return $result;
     }
-
     public function retrieveToken($id, $token)
     {
         $bdd = $this->bdd;
@@ -50,7 +42,6 @@ class UserManager extends BddManager
         $user = new User($result);
         return $user;
     }
-
     public function MatchUser($username)
     {
         $bdd = $this->bdd;
@@ -65,7 +56,6 @@ class UserManager extends BddManager
         $query-> execute(array($user->getUsername(), $user->getEmail()));
         return $verify = $query->fetch();
     }
-
     public function create(User $user)
      {
          $bdd = $this->bdd;
@@ -77,6 +67,5 @@ class UserManager extends BddManager
          $result=$query;
          return $result;
     }
-
 }
 

@@ -3,11 +3,11 @@
     <form action="Login" method="POST">
         <div class="form-group">
             <label for="">Pseudo</label>
-            <input type="text" name="username" class="form-control"/>
+            <input type="text" name="username" class="form-control" required/>
         </div>
         <div class="form-group">
             <label for=""> Mot de passe <a href="Forget">(J'ai oublié mon mot de passe)</a></label>
-            <input type="password" name="password" class="form-control"/>
+            <input type="password" name="password" class="form-control" required/>
         </div>
         <button type="submit" class="btn btn-primary">Se connecter</button>
     </form>

@@ -11,10 +11,14 @@
 		$article->setTitre($titre);
 		$article->setText($text);
 		$saveIsOk = $articleManager->update($article);
+        $session = new Session();
+        $session ->setFlash('success', "La modification a été enregistré");
 		header('location: Dashboard');
 	}else
 	{
-		header('location: templates/error.php');
-		exit;
+        $session = new Session();
+        $session ->setFlash('danger', "Un probleme est survenu");
+		header('location: Error');
+        exit;
 	}
 //include '../templates/update.php';

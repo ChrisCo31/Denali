@@ -12,7 +12,7 @@ if((isset($idcommentaire)) AND (!empty($idcommentaire)))
 {
     $manager = new CommentaireManager();
     $manager->report($idcommentaire);
+    $session = new Session();
+    $session->setFlash('success', 'Le commentaire a bien été signalé');
     header('Location: Home');
 }
-
-
