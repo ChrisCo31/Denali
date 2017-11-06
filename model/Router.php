@@ -26,9 +26,6 @@ class Router
     {
         $this->url = $url;
     }
-/**
- * @return array
- */
     public function getRoutes()
     {
         return $this->routes;

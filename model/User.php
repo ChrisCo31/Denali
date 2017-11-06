@@ -12,12 +12,18 @@ class User
     private $datetoken;
     private $role;
     private $errors= [];
-
+    /*
+    * Construction de l'objet user
+    * Paramètre : tableau de donnees qui correspond aux proprietes du user
+    */
     public function __construct(array $data=[])
     {
         if(!empty($data)){
         $this->hydrate($data); }
     }
+    /*
+    * Assignation de valeurs aux attributs via l'hydratation
+    */
     public function hydrate(array $data)
     {
         $this->id=$data['id'];
@@ -28,47 +34,82 @@ class User
         $this->token = $data['token'];
         $this->datetoken = $data['dateToken'];
     }
+    /**
+     * @return mixed
+     */
     public function getToken()
     {
         return $this->token;
     }
+    /**
+     * @param $token
+     */
     public function setToken($token)
     {
         $this->token = $token;
     }
+    /**
+     * @return mixed
+     */
     public function getDateToken()
     {
         return $this->datetoken;
     }
+    /**
+     * @param $datetoken
+     */
     public function setDateToken($datetoken)
     {
         $this->datetoken = $datetoken;
     }
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->id;
     }
-     public function getUsername()
+    /**
+     * @return mixed
+     */
+    public function getUsername()
     {
         return $this->username;
     }
+    /**
+     * @return mixed
+     */
     public function getEmail()
     {
         return $this->email;
     }
+    /**
+     * @return mixed
+     */
     public function getPassword()
     {
         return $this->password;
     }
+    /**
+     * @return array
+     */
     public function getErrors()
     {
         return $this->errors;
     }
+    /**
+     * @param $errors
+     * @return $this
+     */
     public function setErrors($errors)
     {
-     $this->errors= $errors;
-     return $this;
+         $this->errors= $errors;
+         return $this;
     }
+    /**
+     * @param $username
+     * @return $this
+     */
     public function setUsername($username)
     {
         if((empty($_POST['username']) || !preg_match('/^[a-zA-Z0-9_-]+$/', $_POST['username'])))
@@ -81,6 +122,10 @@ class User
             return $this;
         }
     }
+    /**
+     * @param $email
+     * @return $this
+     */
     public function setEmail($email)
     {
         if((empty($_POST['email']) ||(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))))
@@ -93,6 +138,10 @@ class User
         return $this;
         }
     }
+    /**
+     * @param $password
+     * @return $this
+     */
     public function setPassword($password)
     {
          if((empty($_POST['password']) || (empty($_POST['password_confirm']) ||($_POST['password'] != $_POST['password_confirm']))))
@@ -106,6 +155,9 @@ class User
              return $this;
          }
     }
+    /**
+     * @return mixed
+     */
     public function getRole()
     {
         return $this->role;

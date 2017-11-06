@@ -6,10 +6,8 @@ class CommentaireManager extends BddManager
 {
      /**
      * Insert un objet Commentaire dans la BDD
-     *
-     * @param      Commentaire $commentaire  
-     *
-     * @return    
+     * @param      Commentaire $commentaire
+     * @return   $this
      */
     public function create(Commentaire $commentaire)
     {
@@ -27,18 +25,14 @@ class CommentaireManager extends BddManager
     );
     return $this;
     }
-     /**
-      * Recupere tous les objets Commentaire de la bdd
-      *
-      * @return     array|bool  Retourne un tableau d'objets Commentaire ou un tableau vide s'in n'y a aucun objet
-      * ou false si une erreur survient
-      */
+    /**
+    * Recupere tout les objets Commentaire de la bdd
+    * @return     array  Retourne un tableau d'objets Commentaire ou un tableau vide s'in n'y a aucun objet
+    */
     public function readAllCommentsByPost($idArticle)
     {
         $bdd = $this->bdd;
-        // 1. Préparer la requête
         $query = $bdd->prepare('SELECT * FROM commentaires WHERE id_article =? ORDER BY date_commentaire DESC');
-        // 2. Exécuter la requête
         $query->execute(array($idArticle));
         while ($row = $query->fetch(PDO::FETCH_ASSOC))
         {
@@ -49,14 +43,11 @@ class CommentaireManager extends BddManager
         if(!isset($commentaires)) return null;
         return $commentaires;
     }
-    
- /**
-      * Supprime un objet Commentaire stocke en bdd
-      *
-      * @param      Commentaire  $commentaire  objet de type Commentaire
-      * 
-      * return     bool true en cas de succes ou false en cas d'erreur        
-      */
+    /**
+    * Supprime un objet Commentaire stocke en bdd
+    * @param      Commentaire  $commentaire  objet de type Commentaire
+    * return     bool true en cas de succes ou false en cas d'erreur
+    */
      public function delete($idcommentaire)
     {
       $bdd = $this->bdd;
@@ -65,20 +56,27 @@ class CommentaireManager extends BddManager
       $result=$query;
       return $result;
     }
-     public function report($idcommentaire)
+    /**
+     * Permet le signalement d'un commentaire
+     * @param $idcommentaire
+     * @return bool
+     */
+    public function report($idcommentaire)
     {
         $bdd = $this->bdd;
         $query = $bdd->prepare ("UPDATE commentaires SET state = 1 WHERE id_commentaire = ? ");
         $query -> execute(array($idcommentaire));
         return $query ->execute();
     }
-     public function commentReported()
+    /**
+     * Affiche les 10 derniers commentaires, avec en premier lieu les commentaires signalés
+     * @return array
+     */
+    public function commentReported()
     {
         $bdd = $this->bdd;
-        // 1. Préparer la requête
         $query = $bdd->prepare('SELECT * FROM commentaires ORDER BY state DESC, date_commentaire DESC LIMIT 0,10');
         $query ->execute();
-        // 3. On récupère les résultats de la requête
         $results=$query->fetchAll();
         $comments =[];
         foreach($results as $data)
@@ -88,7 +86,12 @@ class CommentaireManager extends BddManager
         }
         return $comments;
     }
-     public function validateComment($idcommentaire)
+    /**
+     * Valide les commentaires signalés
+     * @param $idcommentaire
+     * @return bool
+     */
+    public function validateComment($idcommentaire)
      {
          $bdd = $this->bdd;
          $query = $bdd->prepare ("UPDATE commentaires SET state = 0 WHERE id_commentaire = ? ");

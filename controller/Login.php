@@ -10,8 +10,11 @@ if(!empty($_POST) AND !empty($_POST['username']) AND (!empty($_POST['password'])
         $email = $result['email'];
         $password = $result['password'];
         $role = $result['role'];
-        $session = new Session();
-        $session->initAuth($username, $email, $password, $role);
+        $session = new session();
+        $session->setUsername($username);
+        $session->setEmail($email);
+        $session->setPassword($password);
+        $session->setRole($role);
         header("Location: Dashboard");
     }else
     {

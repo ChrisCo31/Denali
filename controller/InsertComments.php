@@ -1,6 +1,6 @@
 <?php
 // Création d'un objet
-    if(!empty($_POST['username']) && (!empty($_POST['Commentaire'])))
+    if(!empty($_POST['username']) || (!empty($_POST['Commentaire'])))
     {
         $CommentaireManager = new CommentaireManager();
         $commentaire = new Commentaire();

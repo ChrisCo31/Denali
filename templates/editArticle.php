@@ -10,7 +10,7 @@
     <div class="panel-body">
             <form action ="Update" method = "POST"> <!-- formulaire pour l'ecrivain-->
                 <label for="titre"> Titre </label> : <textarea name ="titre" id="titre" cols="135"> <?php echo $article->getTitre(); ?> </textarea> <br />
-                <label for="text"> Texte </label> :  <textarea name ="text" id="text" rows="25" cols="135" > <?php echo $article->getText(); ?> </textarea> <br />
+                <label for="text"> Texte </label> :  <textarea name ="text" id="mytextarea" rows="25" cols="135" > <?php echo $article->getText(); ?> </textarea> <br />
                 <input type="hidden" name="id_article" value = "<?php echo $article->getId_article(); ?>" >
                 <button type="submit"  class="btn btn-primary btn-xs"> Mettre à jour</button><br/>
 
