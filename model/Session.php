@@ -4,32 +4,14 @@
  */
 class Session
 {
-    private $usernameAdmin = 'chris';
-    private $emailuserAdmin = 'christel.coeur@free.fr';
-    private $usernameRole = 'admin';
+     private $role_accepted = 'admin';
 
-    /**
+       /**
      * @return string
      */
-    public function getEmailuserAdmin()
+    public function getRoleAccepted()
     {
-        return $this->emailuserAdmin;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUsernameRole()
-    {
-        return $this->usernameRole;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUsernameAdmin()
-    {
-        return $this->usernameAdmin;
+        return $this->role_accepted;
     }
 
     /**
@@ -46,12 +28,12 @@ class Session
      */
     public function accessBackend()
     {
-        if (($this->getUsername() == $this->usernameAdmin ) AND  ($this->getEmail() == $this->emailuserAdmin) AND  ($this->getRole() == $this->usernameRole))
+        if ($this->getRole() == $this->getRoleAccepted())
         {
-        return true;
-    }else
+            return true;
+        }else
         {
-        return false;
+            return false;
         }
     }
     /**
@@ -83,7 +65,11 @@ class Session
      */
     public function getEmail()
     {
-        return $_SESSION['email'];
+        if(isset($_SESSION['email']))
+        {
+            return $_SESSION['email'];
+        }
+
     }
     /**
      * @param $password
@@ -111,7 +97,11 @@ class Session
      */
     public function getRole()
     {
-        return $_SESSION['role'];
+        if(isset($_SESSION['role']))
+        {
+            return $_SESSION['role'];
+        }
+
     }
     /*
     * Methode qui permet de definir un message flash

@@ -27,7 +27,7 @@ class UserManager extends BddManager
     public function retrieveToken($id, $token)
     {
         $bdd = $this->bdd;
-        $query = $bdd->prepare(" SELECT * FROM users WHERE id = ? AND token = ? AND dateToken > DATE_SUB(NOW(), INTERVAL 15 MINUTE)");
+        $query = $bdd->prepare(" SELECT * FROM users WHERE id = ? AND token = ? ");
         $query->execute(array($id, $token));
         $result = $query->fetch();
         return $result;

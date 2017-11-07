@@ -1,5 +1,5 @@
 <?php
-$session = new Session();?>
+$session = new Session(); ?>
 <?php ($session->accessBackend() ) ? $class = "navbar-default" : $class = "navbar-inverse";?>
 <nav class="navbar <?php echo $class;?> ">
     <div class="container">
