@@ -1,0 +1,164 @@
+/* Couleur de fond*/
+body {
+    background-color: #f9f3e9;
+    color : #00233D;
+    font-family: 'Philosopher', sans-serif;
+}
+h2 {
+    font-weight: bold;
+}
+p {
+    font-family: 'Muli', sans-serif;
+}
+a {
+    color : #00233D;
+    font-weight: bold;
+}
+a:hover {
+    color : #8a004f;
+}
+/* La banniere */
+#headerwrap {
+    background: url(../img/beton2.jpg) no-repeat center top;
+    margin-top: -84px;
+    padding-top: 250px;
+    text-align:center;
+    background-attachment: relative;
+    background-position: center center;
+    min-height: 650px;
+    width: 100%;
+    color: white;
+}
+#headerwrap h1 {
+    color: #f9f3e9;
+    padding-top: 5px;
+    padding-bottom: 50px;
+    letter-spacing: 5px;
+    font-size: 80px;
+    font-weight: bold;
+}
+#headerwrap h3 {
+    color: #f9f3e9;
+}
+/* le footer */
+#footerwrap {
+    padding-top: 110px;
+    padding-bottom: 150px;
+    background: url(../img/finger.png) no-repeat center top;
+    text-align: center;
+}
+.container {
+    text-align: center;
+}
+.article {
+    text-align: center;
+}
+/* Le nav */
+.navbar-brand {
+    padding-top: 3px;
+}
+.navbar-default{
+    /* Couleur de fond de la barre de navigation du dashboard*/
+    background-color: #434e5b;
+    border-color: #434e5b;
+    font-size: 16px;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #f9f3e9;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #8a004f;
+}
+.navbar-inverse {
+    /* Couleur de fond de la barre de navigation du front*/
+    background-color: #08223c;
+    border:none;
+    font-size: 16px;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color:  #f9f3e9;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #8a004f;
+}
+/* zone de texte */
+.well-lg {
+    background-color: #FFF7EE;
+    border-color: #F5F5F5;
+    border-radius : 30px;
+    font-size: 16px;
+}
+.panel-primary {
+    border-radius: 30px;
+    background-color: #FFF7EE;
+    border-color: #F5F5F5;
+}
+.panel-heading {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+#create .well-lg {
+    background-color: rgba(143, 135,124,0.4);
+}
+#create .well-lg h2 {
+    font-size: 45px;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+#create .well-lg .creation {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+#chapitres .well-lg {
+    background-color: rgba(143, 135,124,0.4);
+}
+#chapitres .well-lg h4 {
+    font-size: 26px;
+}
+#commentaires .well-lg h4 {
+    font-size : 26px;
+}
+#commentaires .well-lg p {
+    font-size : 14px;
+}
+#commentaires .well-lg {
+    background-color: rgba(143, 135,124,0.4);
+}
+#commentaires .btn-warning {
+    background-color: #F0FFFF;
+    border: #F0FFFF;
+    color: black;
+}
+.panel-primary .panel-heading {
+    background-color : #08223c;
+}
+.panel-body .btn-primary {
+    background-color : #08223c;
+}
+.submit .btn-primary
+{
+    background-color :  #08223c;
+}
+.publier {
+    background-color: #434e5b;
+}
+.alert-warning {
+    background-color: red;
+    color: black;
+    font-size : 20px;
+    border-radius: 10px;
+}
+.alert-success {
+    background-color: darkgreen;
+    color: black;
+    font-size : 20px;
+    border-radius: 10px;
+}
+#deco {
+    border : dashed 1px;
+    border-color: #08223c;
+}

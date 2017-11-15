@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mishi
- * Date: 27/10/2017
- * Time: 16:12
- */
 if(isset($_GET['id']) && isset($_GET['token']))
 {
     $id = $_GET['id'];
@@ -33,5 +27,4 @@ if(isset($_GET['id']) && isset($_GET['token']))
     header('Location : Login');
     exit();
 }
-
 include_once 'templates/reset.php';

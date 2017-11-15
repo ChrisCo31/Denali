@@ -14,8 +14,7 @@ if(!empty($_POST))
         {
             $session = new session();
             $session->setFlash('warning',"Ces donnees sont deja utilisées" );
-
-    }else
+        }else
         {
             $userManager->create($user);
             $session = new session();
@@ -26,7 +25,6 @@ if(!empty($_POST))
     }else
     {
         $errors = $user->getErrors();
-
     }
 }
 require_once 'templates/register.php';

@@ -1,5 +1,4 @@
 <?php
-
 if(!empty($_POST) AND !empty($_POST['username']) AND (!empty($_POST['password'])))
 {
     $userManager = new UserManager();
