@@ -79,7 +79,7 @@ class UserManager extends BddManager
         $bdd = $this->bdd;
         $query = $bdd-> prepare('SELECT * FROM users WHERE (username = ?)');
         $query->execute (array($username));
-        return $verify = $query->fetch();
+        return $query->fetch();
     }
     /**
      * Methode qui verifie l'existence d'un utilsateur
@@ -91,7 +91,7 @@ class UserManager extends BddManager
         $bdd = $this->bdd;
         $query = $bdd->prepare("SELECT id FROM users WHERE (username = ?) OR (email = ?) ");
         $query-> execute(array($user->getUsername(), $user->getEmail()));
-        return $verify = $query->fetch();
+        return $query->fetch();
     }
     /**
      * Methode qui crée un utilsateur en bdd
