@@ -1,6 +1,6 @@
 <?php
 // instanciation = creation d'un objet : $article
-if(!empty($_GET['id']) AND (ctype_digit($_GET['id'])))
+if(!empty($_GET['id']) && (ctype_digit($_GET['id'])))
 {
     $id_article = $_GET['id'];
     $articleManager = new ArticleManager();
