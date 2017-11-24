@@ -2,7 +2,7 @@
 $session = new Session();
 if($session->accessBackend())
 {
-    if(!empty($_POST['titre']) OR (!empty($_POST['text'])))
+    if(!empty($_POST['titre']) || (!empty($_POST['text'])))
     {
         $ArticleManager = new ArticleManager();
         $article = new Article();
