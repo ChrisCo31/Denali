@@ -1,6 +1,6 @@
 <?php
 // instanciation = creation d'un objet : $article
-	if(!empty($_POST['titre']) OR (!empty($_POST['text'])))
+	if(!empty($_POST['titre']) || (!empty($_POST['text'])))
 	{
 		$articleManager = new ArticleManager();
 		$id_article = $_POST['id_article'];
