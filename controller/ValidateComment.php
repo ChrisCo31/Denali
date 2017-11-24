@@ -1,5 +1,5 @@
 <?php
-if(!empty($_GET['id']) AND (ctype_digit($_GET['id'])))
+if(!empty($_GET['id']) && (ctype_digit($_GET['id'])))
 {
     $id_commentaire = $_GET['id'];
     $commentaireManager = new CommentaireManager();
