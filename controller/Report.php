@@ -8,7 +8,7 @@
 // Creation d'un objet
 //recuperer l'id du commentaire passer en POST pour identifier le commentaire à signaler
 $idcommentaire = $_GET['id'];
-if((isset($idcommentaire)) AND (!empty($idcommentaire)))
+if((isset($idcommentaire)) && (!empty($idcommentaire)))
 {
     $manager = new CommentaireManager();
     $manager->report($idcommentaire);
