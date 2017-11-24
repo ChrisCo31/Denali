@@ -1,5 +1,5 @@
 <?php
-if(isset($commentaires) AND (!empty($commentaires)))
+if(isset($commentaires) && (!empty($commentaires)))
 {
     foreach  ($commentaires as $commentaire):?>
         <div class="article">
